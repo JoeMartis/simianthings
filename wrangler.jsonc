@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "simianthings",
+  "compatibility_date": "2026-09-13",
+  "assets": {
+    // Deploy only the built site, not the repo root (which includes .git,
+    // raw catalog exports, and other source-only files).
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
