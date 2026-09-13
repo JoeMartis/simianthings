@@ -2,10 +2,12 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "simianthings",
   "compatibility_date": "2026-09-13",
+  "observability": { "enabled": true },
   "assets": {
-    // Deploy only the built site, not the repo root (which includes .git,
-    // raw catalog exports, and other source-only files).
-    "directory": "./dist",
+    // Only ./public is deployed. Keeping the deployable site in its own
+    // committed directory means no build step is required, and .git plus
+    // the raw catalog exports in ./data are never walked as assets.
+    "directory": "./public",
     "not_found_handling": "single-page-application"
   }
 }

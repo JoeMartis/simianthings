@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; background: #0B0B0B; }
+  body { font-family: Archivo, system-ui, sans-serif; color: #EDE7DA; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #B6FF1B; text-decoration: none; border-bottom: 2px solid #B6FF1B; }
+  a:hover { color: #FF2E88; border-bottom-color: #FF2E88; }
+  input { font-family: inherit; }
+  button { font-family: inherit; cursor: pointer; }
+  @keyframes crawl { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+</style>
+</helmet>
+
+<div style="background: #0B0B0B; min-height: 100vh;">
+
+  <header style="position: relative; overflow: hidden; background: #0B0B0B; border-bottom: 4px solid #EDE7DA; padding: 56px 24px 28px;">
+    <div style="position: absolute; inset: 0; background-image: radial-gradient(#B6FF1B 1.1px, transparent 1.2px); background-size: 7px 7px; opacity: 0.16; pointer-events: none;"></div>
+    <div style="position: relative; max-width: 1400px; margin: 0 auto;">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #B6FF1B; margin-bottom: 14px;">
+        <span>Handmade resin</span>
+        <span style="color: #5C5C5C;">/</span>
+        <span>Small batch</span>
+        <span style="color: #5C5C5C;">/</span>
+        <span>Mostly sold out</span>
+      </div>
+      <h1 style="margin: 0; font-family: 'Archivo Black', sans-serif; font-size: clamp(44px, 11vw, 150px); line-height: 0.82; letter-spacing: -0.045em; text-transform: uppercase; color: #EDE7DA; text-wrap: balance;">Simian<br /><span style="color: #B6FF1B; -webkit-text-stroke: 2px #0B0B0B; text-shadow: 6px 6px 0 #FF2E88;">Cheese</span></h1>
+      <div style="display: flex; flex-wrap: wrap; gap: 28px 44px; margin-top: 30px; align-items: flex-end; justify-content: space-between;">
+        <p style="margin: 0; max-width: 560px; font-size: 17px; line-height: 1.5; color: #C9C2B4; text-wrap: pretty;">Every figure poured, pulled, and bagged by hand. This is the full run — the whole back catalog, sold out and otherwise, kept here so it doesn't vanish when the shop does.</p>
+        <div style="display: flex; gap: 34px; font-family: 'Space Mono', monospace;">
+          <div><div style="font-size: 34px; font-weight: 700; color: #B6FF1B; line-height: 1;">94</div><div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #8A8578; margin-top: 6px;">Releases</div></div>
+          <div><div style="font-size: 34px; font-weight: 700; color: #B6FF1B; line-height: 1;">7</div><div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #8A8578; margin-top: 6px;">Years</div></div>
+          <div><div style="font-size: 34px; font-weight: 700; color: #FF2E88; line-height: 1;">93</div><div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #8A8578; margin-top: 6px;">Retired</div></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div style="background: #B6FF1B; border-bottom: 4px solid #0B0B0B; overflow: hidden; white-space: nowrap;">
+    <div style="display: inline-block; animation: crawl 34s linear infinite; font-family: 'Archivo Black', sans-serif; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; color: #0B0B0B; padding: 9px 0;">
+      <span style="padding: 0 18px;">Resin freaks</span><span style="padding: 0 18px;">✦</span><span style="padding: 0 18px;">Bagged &amp; carded</span><span style="padding: 0 18px;">✦</span><span style="padding: 0 18px;">Hand poured in small runs</span><span style="padding: 0 18px;">✦</span><span style="padding: 0 18px;">One-offs &amp; oddities</span><span style="padding: 0 18px;">✦</span><span style="padding: 0 18px;">Resin freaks</span><span style="padding: 0 18px;">✦</span><span style="padding: 0 18px;">Bagged &amp; carded</span><span style="padding: 0 18px;">✦</span><span style="padding: 0 18px;">Hand poured in small runs</span><span style="padding: 0 18px;">✦</span><span style="padding: 0 18px;">One-offs &amp; oddities</span><span style="padding: 0 18px;">✦</span>
+    </div>
+  </div>
+
+  <div style="position: sticky; top: 0; z-index: 20; background: #0B0B0B; border-bottom: 3px solid #2A2A2A; padding: 14px 24px;">
+    <div style="max-width: 1400px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+      <input type="search" placeholder="SEARCH THE PILE…" onInput="{{ onSearch }}" style="flex: 1 1 240px; min-width: 0; background: #151515; border: 2px solid #3A3A3A; color: #EDE7DA; padding: 11px 14px; font-family: 'Space Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; outline: none;" style-focus="border-color: #B6FF1B;" />
+      <div style="display: flex; gap: 8px;">
+        <button onClick="{{ showAll }}" style="{{ chipAll }}">All</button>
+        <button onClick="{{ showActive }}" style="{{ chipActive }}">Available</button>
+        <button onClick="{{ showSold }}" style="{{ chipSold }}">Sold out</button>
+      </div>
+      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8578; margin-left: auto;">{{ countLabel }}</div>
+    </div>
+  </div>
+
+  <main style="max-width: 1400px; margin: 0 auto; padding: 3px 24px 80px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(232px, 1fr)); gap: 3px; background: #1C1C1C; border: 3px solid #1C1C1C;">
+      <sc-for list="{{ cards }}" as="item" hint-placeholder-count="12">
+        <button onClick="{{ item.open }}" style="position: relative; display: block; text-align: left; background: #0B0B0B; border: 0; padding: 0; overflow: hidden;" style-hover="background: #151515;">
+          <div style="position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: #131313;">
+            <img src="{{ item.hero }}" alt="{{ item.name }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.05);" />
+            <sc-if value="{{ item.isSold }}" hint-placeholder-val="{{ true }}">
+              <div style="position: absolute; top: 10px; left: -30px; transform: rotate(-14deg); background: #FF2E88; color: #0B0B0B; font-family: 'Archivo Black', sans-serif; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; padding: 5px 34px; border-top: 2px solid #0B0B0B; border-bottom: 2px solid #0B0B0B;">Sold out</div>
+            </sc-if>
+          </div>
+          <div style="padding: 13px 13px 16px; border-top: 2px solid #1C1C1C;">
+            <div style="font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: #8A8578; margin-bottom: 6px;">{{ item.year }} · {{ item.imgLabel }}</div>
+            <div style="font-family: 'Archivo Black', sans-serif; font-size: 14px; line-height: 1.15; letter-spacing: -0.01em; text-transform: uppercase; color: #EDE7DA; text-wrap: pretty;">{{ item.name }}</div>
+            <div style="font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; color: #B6FF1B; margin-top: 8px;">{{ item.priceLabel }}</div>
+          </div>
+        </button>
+      </sc-for>
+    </div>
+    <sc-if value="{{ isEmpty }}">
+      <div style="padding: 90px 20px; text-align: center; font-family: 'Archivo Black', sans-serif; font-size: 22px; text-transform: uppercase; color: #4A4A4A;">Nothing in the bin matches that.</div>
+    </sc-if>
+  </main>
+
+  <footer style="border-top: 4px solid #EDE7DA; background: #0B0B0B; padding: 40px 24px 64px;">
+    <div style="max-width: 1400px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: flex-end;">
+      <div style="font-family: 'Archivo Black', sans-serif; font-size: clamp(26px, 5vw, 54px); line-height: 0.9; text-transform: uppercase; letter-spacing: -0.03em; color: #EDE7DA;">Still pouring.</div>
+      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8578; text-align: right;">Simian Cheese · Archive 2019–2026<br />94 releases · 379 photographs</div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ sel }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 60; background: rgba(6,6,6,0.97); overflow-y: auto; overscroll-behavior: contain;">
+      <div style="position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 24px; background: #0B0B0B; border-bottom: 3px solid #2A2A2A;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8578;">{{ selIndexLabel }}</div>
+        <button onClick="{{ close }}" style="background: #B6FF1B; color: #0B0B0B; border: 0; padding: 10px 20px; font-family: 'Archivo Black', sans-serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;" style-hover="background: #FF2E88;">Close ✕</button>
+      </div>
+      <div style="max-width: 1400px; margin: 0 auto; padding: 28px 24px 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; align-items: start;">
+        <div>
+          <div style="background: #131313; border: 3px solid #1C1C1C;">
+            <img src="{{ selMain }}" alt="{{ selName }}" loading="lazy" style="width: 100%; display: block;" />
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px;">
+            <sc-for list="{{ selThumbs }}" as="t" hint-placeholder-count="3">
+              <button onClick="{{ t.pick }}" style="width: 74px; height: 74px; padding: 0; border: 3px solid #1C1C1C; background: #131313; overflow: hidden;" style-hover="border-color: #B6FF1B;">
+                <img src="{{ t.src }}" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              </button>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;">
+            <span style="background: #1C1C1C; color: #B6FF1B; padding: 6px 11px;">{{ selYear }}</span>
+            <span style="background: #FF2E88; color: #0B0B0B; padding: 6px 11px; font-weight: 700;">{{ selStatus }}</span>
+          </div>
+          <h2 style="margin: 0 0 14px; font-family: 'Archivo Black', sans-serif; font-size: clamp(28px, 4.4vw, 52px); line-height: 0.94; letter-spacing: -0.03em; text-transform: uppercase; color: #EDE7DA; text-wrap: balance;">{{ selName }}</h2>
+          <div style="font-family: 'Space Mono', monospace; font-size: 22px; font-weight: 700; color: #B6FF1B; margin-bottom: 26px;">{{ selPrice }}</div>
+          <div style="border-top: 3px solid #1C1C1C; padding-top: 22px;">
+            <sc-for list="{{ selParas }}" as="p" hint-placeholder-count="2">
+              <p style="margin: 0 0 15px; font-size: 16px; line-height: 1.62; color: #C9C2B4; text-wrap: pretty;">{{ p.text }}</p>
+            </sc-for>
+          </div>
+          <sc-if value="{{ hasOpts }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top: 28px; border-top: 3px solid #1C1C1C; padding-top: 22px;">
+              <div style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8A8578; margin-bottom: 12px;">Variants in this run</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <sc-for list="{{ selOpts }}" as="o" hint-placeholder-count="3">
+                  <span style="border: 2px solid #2A2A2A; color: #C9C2B4; padding: 7px 12px; font-family: 'Space Mono', monospace; font-size: 12px;">{{ o.name }}</span>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Catalog&quot;},&quot;hideSoldOut&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Catalog&quot;},&quot;sort&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;newest&quot;,&quot;options&quot;:[&quot;newest&quot;,&quot;oldest&quot;,&quot;price&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Catalog&quot;}}">
+const CHIP_BASE = "border:2px solid #3A3A3A;padding:11px 15px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;";
+
+class Component extends DCLogic {
+  state = { q: '', filter: 'all', sel: null, gi: 0, items: null };
+
+  componentDidMount() {
+    import('./data/products.js').then(m => this.setState({ items: m.default }));
+    this._key = e => { if (e.key === 'Escape') this.setState({ sel: null }); };
+    window.addEventListener('keydown', this._key);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this._key); }
+
+  chip(name) {
+    const on = this.state.filter === name;
+    return CHIP_BASE + (on
+      ? 'background:#B6FF1B;color:#0B0B0B;border-color:#B6FF1B;font-weight:700;'
+      : 'background:#151515;color:#8A8578;');
+  }
+
+  renderVals() {
+    const all = this.state.items || [];
+    const showPrices = this.props.showPrices ?? true;
+    const hideSold = this.props.hideSoldOut ?? false;
+    const sort = this.props.sort ?? 'newest';
+    const q = this.state.q.trim().toLowerCase();
+
+    let list = all.filter(p => {
+      const sold = p.status !== 'active';
+      if (hideSold && sold) return false;
+      if (this.state.filter === 'active' && sold) return false;
+      if (this.state.filter === 'sold' && !sold) return false;
+      if (q && !(p.name + ' ' + p.desc).toLowerCase().includes(q)) return false;
+      return true;
+    });
+    list = [...list];
+    if (sort === 'oldest') list.sort((a, b) => a.created.localeCompare(b.created));
+    else if (sort === 'price') list.sort((a, b) => b.price - a.price);
+    else list.sort((a, b) => b.created.localeCompare(a.created));
+
+    const cards = list.map(p => ({
+      name: p.name,
+      hero: p.files[0],
+      year: p.created.slice(0, 4),
+      imgLabel: p.files.length + (p.files.length === 1 ? ' shot' : ' shots'),
+      isSold: p.status !== 'active',
+      priceLabel: showPrices ? '$' + p.price.toFixed(2) : (p.status !== 'active' ? 'Retired' : 'Available'),
+      open: () => this.setState({ sel: p, gi: 0 })
+    }));
+
+    const s = this.state.sel;
+    const gi = Math.min(this.state.gi, s ? s.files.length - 1 : 0);
+
+    return {
+      cards,
+      isEmpty: all.length > 0 && list.length === 0,
+      countLabel: all.length ? list.length + ' / ' + all.length + ' pieces' : 'Loading the pile…',
+      onSearch: e => this.setState({ q: e.target.value }),
+      showAll: () => this.setState({ filter: 'all' }),
+      showActive: () => this.setState({ filter: 'active' }),
+      showSold: () => this.setState({ filter: 'sold' }),
+      chipAll: this.chip('all'),
+      chipActive: this.chip('active'),
+      chipSold: this.chip('sold'),
+      close: () => this.setState({ sel: null }),
+      sel: s,
+      selName: s ? s.name : '',
+      selMain: s ? s.files[gi] : '',
+      selThumbs: s ? s.files.map((f, i) => ({ src: f, pick: () => this.setState({ gi: i }) })) : [],
+      selYear: s ? s.created.slice(0, 4) : '',
+      selStatus: s ? (s.status === 'active' ? 'Available' : 'Sold out') : '',
+      selPrice: s ? '$' + s.price.toFixed(2) : '',
+      selIndexLabel: s ? 'No. ' + String(s.n).padStart(3, '0') + ' · Simian Cheese archive' : '',
+      selParas: s ? s.desc.split(/\r?\n+/).map(t => t.trim()).filter(Boolean).map(text => ({ text })) : [],
+      selOpts: s ? s.opts : [],
+      hasOpts: !!(s && s.opts && s.opts.length)
+    };
+  }
+}
+</script>
+</body>
+</html>
